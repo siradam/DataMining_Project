@@ -10,6 +10,7 @@ import {
     homeWrapper: {
       flex: 1,
       display: "flex",
+      backgroundColor: colors.white
     },
   
     headlineWrapper: {
