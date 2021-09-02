@@ -18,7 +18,7 @@ function MainTabsNavigator() {
         activeColor="#f0edf6"
         inactiveColor= {colors.lightblue}
         barStyle={{ backgroundColor: colors.lightblue }}
-       
+        style= {{marginTop: 20}}
     >
       <Tab.Screen
         name="Home"
