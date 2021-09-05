@@ -52,7 +52,13 @@ const FishDetails = ({navigation, route}) => {
               {'Z - Value: ' + z }
             </Text>
             <Text style={styles.textStyle}>
-              {'Land: ' + land}
+              {'Land: '}
+              {
+                <Image
+                  style={styles.landIconStyle}
+                  source={land ? require('../../assets/images/land.png') : require('../../assets/images/noland.png')}
+                /> 
+              }
             </Text>
             <Text style={ [styles.textStyle, { fontSize: 12 }] }>
               {'Timestamp: ' + temp }

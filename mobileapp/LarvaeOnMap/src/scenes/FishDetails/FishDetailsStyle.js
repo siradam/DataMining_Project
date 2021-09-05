@@ -90,6 +90,11 @@ import {
       fontFamily: "ComicSans-Bold",
       marginLeft: 30,
       marginVertical: 5,
+    }, 
+    landIconStyle: {
+      height: 18,
+      width: 18,
+      resizeMode: 'contain'
     }
 
     
