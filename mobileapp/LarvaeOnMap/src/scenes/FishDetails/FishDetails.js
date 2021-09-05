@@ -8,7 +8,7 @@ const FishDetails = ({navigation, fish}) => {
   console.log("FishDetails")
   return (
     <View style={styles.sceneWrapper}>
-        <TouchableOpacity style={styles.closeIcon} onPress={() => console.log("cLose presssed")}>
+        <TouchableOpacity style={styles.closeIcon} onPress={() => navigation.goBack()}>
           <Image
             style={styles.iconStyle}
             source={require('../../assets/images/close.png')}
