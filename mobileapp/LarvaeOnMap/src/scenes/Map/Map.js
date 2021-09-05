@@ -4,7 +4,7 @@ import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps'; // 
 import styles from './MapStyles';
 import {Button, Text} from 'react-native-paper';
 
-const Map = () => {
+const Map = ({navigation}) => {
   const {width, height} = Dimensions.get('window');
   const aspectRatio = width / height;
   const latitude_delta = 0.15;
@@ -38,33 +38,32 @@ const Map = () => {
       mapType = { selectedMapType }
       region={initialRegion
       }>
-      {fishData.map((marker, index) => {
+      {fishData.map((fishMarker, index) => {
         return (
           <Marker
             key={index}
             coordinate={{
-              latitude: marker.lat,
-              longitude: marker.lon,
+              latitude: fishMarker.lat,
+              longitude: fishMarker.lon,
             }}
             onPress={() => console.log('pressed')}
-            
             >
             <Image
               source={require('../../assets/images/fish_marker.png')}
               style={{width: 28, height: 30}}
               resizeMode="contain"
             />
-            <Callout tooltip>
+            <Callout tooltip onPress={() => {navigation.navigate('FishDetails', { fishDetails: fishMarker })}}>
               <View style={styles.textContainer}>
                 <Text style={styles.obsStyle}>
-                    {'Observation ID: ' + marker.obs}
-                  </Text>
-                  <Text style={styles.descStyle}>
-                    {'Trajectory ID: ' + marker.traj}
-                  </Text>
-                  <Text style={styles.timeStyle}>
-                    {'Timestamp: ' + marker.time}
-                  </Text>
+                  {'Observation ID: ' + fishMarker.obs}
+                </Text>
+                <Text style={styles.descStyle}>
+                  {'Trajectory ID: ' + fishMarker.traj}
+                </Text>
+                <Text style={styles.timeStyle}>
+                  {'Timestamp: ' + fishMarker.time}
+                </Text>
               </View>
             </Callout>
           </Marker>
