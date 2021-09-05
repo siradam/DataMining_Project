@@ -4,8 +4,11 @@ import styles from './FishDetailsStyle';
 import {Button, Text} from 'react-native-paper';
 import colors from '../../styles/colors';
 
-const FishDetails = ({navigation, fish}) => {
-  console.log("FishDetails")
+const FishDetails = ({navigation, route}) => {
+  const { fishDetails } = route.params;
+  //Destructuring
+  const { obs, traj, MPA, temp, z, land, time } = fishDetails;
+
   return (
     <View style={styles.sceneWrapper}>
         <TouchableOpacity style={styles.closeIcon} onPress={() => navigation.goBack()}>
@@ -34,25 +37,25 @@ const FishDetails = ({navigation, fish}) => {
           </View>
           <View style={styles.descContainer}>
             <Text style={styles.textStyle}>
-              {'Observation ID: ' }
+              {'Observation ID: ' + obs}
             </Text>
             <Text style={styles.textStyle}>
-              {'Trajectory ID: ' }
+              {'Trajectory ID: ' + traj}
             </Text>
             <Text style={styles.textStyle}>
-              {'Marine Protected Area: ' }
+              {'Marine Protected Area: ' + MPA }
             </Text>
             <Text style={styles.textStyle}>
-              {'Temperature: ' }
+              {'Temperature: ' + temp}
             </Text>
             <Text style={styles.textStyle}>
-              {'Z - Value: ' }
+              {'Z - Value: ' + z }
             </Text>
             <Text style={styles.textStyle}>
-              {'Land: ' }
+              {'Land: ' + land}
             </Text>
-            <Text style={ [styles.textStyle, { fontSize: 12, fontFamily: "ComicSans-Italic"}] }>
-              {'Timestamp: '}
+            <Text style={ [styles.textStyle, { fontSize: 12 }] }>
+              {'Timestamp: ' + temp }
             </Text>
           </View>
         </View>
