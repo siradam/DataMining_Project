@@ -30,10 +30,18 @@ const Home = ({navigation}) => {
 
           <TouchableOpacity style={styles.imageContainer} onPress={() => navigation.navigate('Map')} >
             <Image
-              style={styles.imgStyle}
+              style={[styles.imgStyle, {height: 180}]}
               source={require('../../assets/images/home_map.png')}
             />
           </TouchableOpacity>
+
+          <View style={[styles.textWrapper, {height: 130}]}>
+            <Text style={styles.textStyle} numberOfLines={8} >
+              {'One experiment only took into account ocean currents from a state estimate of the true ocean circulation in the Mediterranean Sea. The other experiment took into account ocean currents and the horizontal movement due to Stokes Drift which was estimated based on a wave state estimate for the Mediterranean Sea.'}
+            </Text>
+          </View>
+
+          {/* TODO -> A small video */}
 
           <View style={{alignItems: 'center', marginVertical: 15}}>
             <Button 

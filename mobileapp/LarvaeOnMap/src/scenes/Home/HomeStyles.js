@@ -31,12 +31,12 @@ import {
       display: "flex",
       justifyContent: "center",
       alignItems: 'center',
-      marginHorizontal: 15
+      marginHorizontal: 15,
     },
     imgStyle: {
       width: width - 30,
       height: 225,
-      resizeMode: 'cover',
+      resizeMode: 'contain',
     },
     textWrapper: {
       display: "flex",
