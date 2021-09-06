@@ -5,10 +5,8 @@ import styles from './MapStyles';
 import {Button, Text} from 'react-native-paper';
 
 const Map = ({navigation}) => {
-  const {width, height} = Dimensions.get('window');
-  const aspectRatio = width / height;
   const latitude_delta = 0.15;
-  const longitude_delta = latitude_delta * aspectRatio;
+  const longitude_delta = 0.15;
   const initialRegion = {
     latitude: 43.310062,
     longitude: 5.1945777,
@@ -18,7 +16,7 @@ const Map = ({navigation}) => {
   const selectedMapType = "standard";
   const [fishData, setFishData] = useState([]);
   // const [initialRegion, setInitialRegion] = useState(initialRegion);
-
+  const [marginBottom, setMargin] = useState(1);
   useEffect(() => {
     //TODO:
     //Fetching from the backend DB
@@ -33,8 +31,11 @@ const Map = ({navigation}) => {
 
   return (
     <MapView
+      onMapReady={() => { setMargin(marginBottom - 1) }}
+      showsUserLocation = { true }
+      zoomControlEnabled = { true }
       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-      style={styles.map}
+      style={[styles.map, { marginBottom: marginBottom}]}
       mapType = { selectedMapType }
       region={initialRegion
       }>
