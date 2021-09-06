@@ -24,8 +24,10 @@ const Map = ({navigation}) => {
     return () => {};
   }, []);
 
-  const getData = () => {
-    const fetchData = require('../../model/trajectories_nostokes_subset_10000_sample_10_lines.json');
+  const getData = async () => {
+    const fetchData = await require('../../model/trajectories_nostokes_subset_10000_sample_10_lines.json');
+    //  const fetchData = await require('../../model/trajectories_stokes_subset_10000.json');
+
     setFishData(fetchData);
   };
 
@@ -47,7 +49,6 @@ const Map = ({navigation}) => {
               latitude: fishMarker.lat,
               longitude: fishMarker.lon,
             }}
-            onPress={() => console.log('pressed')}
             >
             <Image
               source={require('../../assets/images/fish_marker.png')}
