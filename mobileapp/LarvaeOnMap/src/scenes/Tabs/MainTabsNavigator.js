@@ -20,7 +20,7 @@ function MapStackScene() {
         headerShown: false
       }}
     >
-      <MapStack.Screen name="Map" component={MapScene} />
+      <MapStack.Screen name="MapScene" component={MapScene} />
       <MapStack.Screen name="FishDetails" component={FishDetails} />
     </MapStack.Navigator>
   );
