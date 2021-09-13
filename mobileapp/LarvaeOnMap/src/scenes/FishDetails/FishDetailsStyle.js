@@ -65,7 +65,7 @@ import {
     titleTextStyle: {
       fontSize: 18,
       color: colors.white,
-      fontFamily: "OpenSans-RegularBold",
+      fontFamily: "ComicSans-Regular",
     },
     imgContainer: {
       flex: 0.2,
