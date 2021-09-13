@@ -1,16 +1,13 @@
 import React, {useState} from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from './SettingsStyles';
-import {Checkbox, Switch} from 'react-native-paper';
+import {Checkbox} from 'react-native-paper';
 
 import colors from '../../styles/colors';
 import TextWithInputBoxStyles from '../../components/TextWithInputBox/TextWithInputBox';
+import TextWithSwitch from '../../components/TextWithSwitch/TextWithSwitch';
 const Settings = () => {
   const [checked, setChecked] = useState(false);
-  const [isSwitchOn1, setIsSwitchOn1] = useState(true);
-  const [isSwitchOn2, setIsSwitchOn2] = useState(false);
-  const [isSwitchOn3, setIsSwitchOn3] = useState(true);
-  const [isSwitchOn4, setIsSwitchOn4] = useState(true);
 
   return (
     <View style={styles.sceneWrapper}>
@@ -44,75 +41,14 @@ const Settings = () => {
         <TextWithInputBoxStyles textLabel={'Observation ID'} val={'0'} />
         <TextWithInputBoxStyles textLabel={'Trajectory ID'} val={'4'} />
 
-        <View style={styles.settingContainer}>
-          <Image
-            style={[styles.iconStyle, {height: 25, width: 25}]}
-            source={require('../../assets/images/list_icon.png')}
-          />
-          <Text style={styles.labelStyle}>{'Land'}</Text>
-          <View style={styles.switchStyle}>
-            <Switch
-              value={isSwitchOn1}
-              onValueChange={() => {
-                setIsSwitchOn1(!isSwitchOn1);
-              }}
-              color={colors.blue}
-            />
-          </View>
-        </View>
-
+        <TextWithSwitch textLabel={'Land'} val={true} />
+          
         <View style={styles.separatorStyle} />
+        {/* Text with Switches for obs and traj ids */}
+        <TextWithSwitch textLabel={'Temperature'} val={true} />
+        <TextWithSwitch textLabel={'Timestamp'} val={true} />
+        <TextWithSwitch textLabel={'Z - Value'} val={false} />
 
-        <View style={styles.settingContainer}>
-          <Image
-            style={[styles.iconStyle, {height: 25, width: 25}]}
-            source={require('../../assets/images/list_icon.png')}
-          />
-          <Text style={styles.labelStyle}>{'Temperature'}</Text>
-          <View style={styles.switchStyle}>
-            <Switch
-              value={isSwitchOn2}
-              onValueChange={() => {
-                setIsSwitchOn2(!isSwitchOn2);
-              }}
-              color={colors.blue}
-            />
-          </View>
-        </View>
-
-        <View style={styles.settingContainer}>
-          <Image
-            style={[styles.iconStyle, {height: 25, width: 25}]}
-            source={require('../../assets/images/list_icon.png')}
-          />
-          <Text style={styles.labelStyle}>{'Timestamp'}</Text>
-          <View style={styles.switchStyle}>
-            <Switch
-              value={isSwitchOn3}
-              onValueChange={() => {
-                setIsSwitchOn3(!isSwitchOn3);
-              }}
-              color={colors.blue}
-            />
-          </View>
-        </View>
-
-        <View style={styles.settingContainer}>
-          <Image
-            style={[styles.iconStyle, {height: 25, width: 25}]}
-            source={require('../../assets/images/list_icon.png')}
-          />
-          <Text style={styles.labelStyle}>{'Z - Value'}</Text>
-          <View style={styles.switchStyle}>
-            <Switch
-              value={isSwitchOn4}
-              onValueChange={() => {
-                setIsSwitchOn4(!isSwitchOn4);
-              }}
-              color={colors.blue}
-            />
-          </View>
-        </View>
       </View>
     </View>
   );
