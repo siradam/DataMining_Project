@@ -1,51 +1,24 @@
 import {
     StyleSheet, Dimensions
   } from "react-native";
-  import colors from "../../styles/colors";
-  const {
-    width, height
-  } = Dimensions.get("window");
 
-  export default StyleSheet.create({
-    container: {
-      ...StyleSheet.absoluteFillObject,
-      flex: 1,
-      justifyContent: 'flex-end',
-      alignItems: 'center',
-    },
-    map: {
-      ...StyleSheet.absoluteFillObject,    
-    },
-    textContainer: {
-      display: 'flex',
-      flex: 0.7,
-      flexDirection: 'column',
-      alignSelf: 'flex-start',
-      backgroundColor: '#fff',
-      borderRadius: 6,
-      borderColor: colors.grey01,
-      borderWidth: 1,
-      padding: 5,
-      width: 120,
-    },
-
-    // TextStyles
-    obsStyle: {
-      fontSize: 12,
-      color: colors.black02,
-      fontFamily: "OpenSans-RegularBold",
-    },
-    descStyle: {
-      fontSize: 10,
-      color: colors.black02,
-      fontFamily: "OpenSans-Regular",
-    },
-    timeStyle: {
-      fontSize: 10,
-      color: colors.grey01,
-      fontFamily: "OpenSans-RegularItalic",
-    }
-    
-  });
+export default StyleSheet.create({
+  container: {
+    ...StyleSheet.absoluteFillObject,
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject, 
+    marginBottom: 25
+  },
+  switchStyle: {
+    position: "absolute",
+    top: 10,
+    left: 10,
+    transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }]
+  }
+});
 
   
