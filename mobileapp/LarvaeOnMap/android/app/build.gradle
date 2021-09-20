@@ -146,6 +146,13 @@ android {
         }
     }
     signingConfigs {
+
+        release {
+            storeFile file('release.keystore')
+            storePassword 'datascienceproject'
+            keyAlias 'your_key_alias'
+            keyPassword 'datascienceproject'
+        }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
