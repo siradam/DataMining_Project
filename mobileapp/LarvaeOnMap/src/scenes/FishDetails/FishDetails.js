@@ -61,7 +61,7 @@ const FishDetails = ({navigation, route}) => {
               }
             </Text>
             <Text style={ [styles.textStyle, { fontSize: 12 }] }>
-              {'Timestamp: ' + temp }
+              {'Timestamp: ' + time }
             </Text>
           </View>
         </View>
