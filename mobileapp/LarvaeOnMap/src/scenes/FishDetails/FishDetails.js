@@ -1,8 +1,7 @@
 import React from 'react';
 import {View, Image, TouchableOpacity} from 'react-native';
 import styles from './FishDetailsStyle';
-import {Button, Text} from 'react-native-paper';
-import colors from '../../styles/colors';
+import {Text} from 'react-native-paper';
 
 const FishDetails = ({navigation, route}) => {
   const { fishDetails } = route.params;

@@ -41,8 +41,6 @@ const Home = ({navigation}) => {
             </Text>
           </View>
 
-          {/* TODO -> A small video */}
-
           <View style={{alignItems: 'center', marginVertical: 15}}>
             <Button 
               color = {colors.blue}

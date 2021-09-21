@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {Image} from 'react-native';
 import {Marker} from 'react-native-maps';
 
 const FishMarker = ({fishData}) => {

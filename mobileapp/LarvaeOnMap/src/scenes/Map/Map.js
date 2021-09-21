@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {View, Image, Dimensions} from 'react-native';
-import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import {View} from 'react-native';
 import styles from './MapStyles';
-import {Button, Text} from 'react-native-paper';
 import ClusteredMapView from 'react-native-maps-super-cluster';
 import FishCluster from '../../components/FishCluster/FishCluster';
 import FishMarker from '../../components/FishMarker/FishMarker';
@@ -24,6 +22,7 @@ const Map = ({navigation}) => {
   const [clusteredMap, setValue] = useState(false);
   const [marginBottom, setMargin] = useState(1);
 
+  // Old code for fetching data.
   // const [fishData, setFishData] = useState([]);
   // const [initialRegion, setInitialRegion] = useState(initialRegion);
 
@@ -51,16 +50,15 @@ const Map = ({navigation}) => {
     />
   );
 
-  const clusterData = fishData.map(d => {
-    d.location = {
-      latitude: d.lat,
-      longitude: d.lon,
+  const clusterData = fishData.map(fishPoint => {
+    fishPoint.location = {
+      latitude: fishPoint.lat,
+      longitude: fishPoint.lon,
     };
-    (d.latitude = d.lat), (d.longitude = d.lon);
-    return d;
+    (fishPoint.latitude = fishPoint.lat), (fishPoint.longitude = fishPoint.lon);
+    return fishPoint;
   });
 
-  console.log('clusterData ', clusterData.length);
   return (
     <View style={{flex: 1}}>
       {clusteredMap ? (

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Image} from 'react-native';
 import styles from './NormalMapViewStyles';
-import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import FishCard from '../FishCard/FishCard';
 
 const NormalMapView = ({fishData, navigation, initialRegion}) => {
